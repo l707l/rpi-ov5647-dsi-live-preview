@@ -1,0 +1,17 @@
+[Unit]
+Description=Live Camera Preview to DSI Display via Framebuffer
+After=multi-user.target
+
+[Service]
+Type=simple
+User=v
+WorkingDirectory=/home/v
+ExecStart=/usr/bin/python3 /home/v/live_cam_fb0.py
+Restart=always
+RestartSec=3
+StandardInput=null
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

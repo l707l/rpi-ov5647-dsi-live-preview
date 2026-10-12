@@ -1,0 +1,28 @@
+# ==============================================================================
+# Configuración /boot/firmware/config.txt (o /boot/config.txt en Debian Bullseye)
+# Raspberry Pi 3B+ con Pantalla DSI y Cámara CSI OV5647
+# ==============================================================================
+
+# Aceleración por hardware DRM KMS (Full KMS)
+dtoverlay=vc4-kms-v3d
+max_framebuffers=2
+
+# Detección automática del sensor CSI (OV5647, IMX219, etc.)
+camera_auto_detect=1
+
+# Detección automática de pantallas DSI
+display_auto_detect=1
+
+# Si display_auto_detect no activa tu panel DSI específico, descomenta según tu modelo:
+# dtoverlay=vc4-kms-dsi-7inch
+# dtoverlay=vc4-kms-dsi-waveshare-panel,7_0_inch
+
+# Configuración del kernel y firmware
+disable_fw_kms_setup=1
+auto_initramfs=1
+arm_64bit=1
+disable_overscan=1
+arm_boost=1
+
+# Asignación de memoria GPU (mínimo recomendado para buffers del ISP/Unicam)
+gpu_mem=128

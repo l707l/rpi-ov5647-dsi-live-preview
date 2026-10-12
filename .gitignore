@@ -1,0 +1,8 @@
+*.so
+*.o
+__pycache__/
+*.pyc
+/tmp/
+*.jpg
+*.yuv
+.DS_Store
